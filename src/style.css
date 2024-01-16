@@ -7,12 +7,30 @@
   text-transform: uppercase;
 }
 
+.cart {
+  position: relative;
+}
+
 .carrito {
   background-color: transparent;
   border: none;
   max-width: 2rem;
   position: relative;
   z-index: 100;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -0.5em;
+  top: -0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 100vw;
+  background-color: #fd0000e9;
+  color: #ffffff;
 }
 
 .carrito #carrito {

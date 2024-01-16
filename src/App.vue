@@ -39,7 +39,6 @@ const addToCart = (item) => {
     item.quantity = 1
     cart.value.push(item)
   }
-
 }
 
 const decreaseQuantity = (id) => {
