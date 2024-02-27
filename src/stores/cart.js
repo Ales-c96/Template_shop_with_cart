@@ -1,9 +1,13 @@
-import { ref, watch, onMounted, computed } from "vue";
+import { ref, watch } from "vue";
 import { defineStore } from "pinia";
-import { db } from "../data/shopItems";
 
 export const useCart = defineStore("cart", () => {
   const cart = ref([]);
+
+  const storageCart = localStorage.getItem("cart");
+  if (storageCart) {
+    cart.value = JSON.parse(storageCart);
+  }
 
   watch(
     cart,
@@ -56,6 +60,5 @@ export const useCart = defineStore("cart", () => {
     deleteProductFromCart,
     emptyCart,
     cart,
-    db,
   };
 });

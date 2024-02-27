@@ -4,13 +4,6 @@ import { useCart } from "../stores/cart";
 
 const { decreaseQuantity, increaseQuantity, deleteProductFromCart, emptyCart, cart } = useCart();
 
-onMounted(() => {
-  const storageCart = localStorage.getItem("cart");
-  if (storageCart) {
-    cart.value = JSON.parse(storageCart);
-  }
-});
-
 const totalPayment = computed(() => {
   return cart.reduce((total, product) => total + product.quantity * product.precio, 0);
 });
@@ -42,7 +35,11 @@ const cartQuantity = computed(() => {
           <tbody>
             <tr v-for="cartItem in cart" :key="cartItem">
               <td>
-                <img class="img-fluid" :src="`/img/${cartItem.imagen}.jpg`" alt="imagen guitarra" />
+                <img
+                  class="img-fluid"
+                  :src="`../../public/img/${cartItem.imagen}.jpg`"
+                  alt="imagen guitarra"
+                />
               </td>
               <td>{{ cartItem.nombre }}</td>
               <td class="fw-bold">${{ cartItem.precio }}</td>
@@ -76,4 +73,64 @@ const cartQuantity = computed(() => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cart {
+  position: relative;
+}
+
+.carrito {
+  background-color: transparent;
+  border: none;
+  max-width: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -0.5em;
+  top: -0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 100vw;
+  background-color: #fd0000e9;
+  color: #ffffff;
+}
+
+.carrito #carrito {
+  display: none;
+  position: absolute;
+}
+
+.carrito:hover #carrito {
+  display: block;
+  background-color: white;
+  padding: 10px;
+  height: fit-content;
+  min-width: 350px;
+  width: fit-content;
+  top: 100%;
+  right: 0;
+  left: unset;
+  margin-left: unset;
+  margin-right: unset;
+}
+
+#carrito img {
+  width: 30px;
+}
+
+#carrito .btn-danger {
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 5px 9px;
+}
+
+#carrito .btn-dark {
+  padding: 0 2px;
+  margin: 0 3px;
+}
+</style>
