@@ -1,11 +1,8 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { useCart } from "../stores/cart";
-import { useShop } from "../stores/shop";
 
 const { addToCart } = useCart();
-const shopStore = useShop();
-
 
 const props = defineProps({
   product: {
@@ -18,7 +15,9 @@ const props = defineProps({
 <template>
   <RouterLink :to="{ name: 'product', params: { id: product.id } }">
     <div class="card">
-      <img class="card__image" :src="product.thumbnail" alt="imagen guitarra" />
+      <div class="card__image">
+        <img :src="product.image" alt="imagen guitarra" />
+      </div>
       <div class="card-info">
         <h3 class="card-info__name">{{ product.title }}</h3>
         <p class="card-info__description">
@@ -52,18 +51,28 @@ const props = defineProps({
 
   &__image {
     width: 15rem;
-    height: auto;
+    height: 18rem;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: .2rem;
+    }
   }
 
   &-info {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     &__name {
       font-size: 1.3rem;
     }
     &__description {
       color: #000;
+      height: 5rem;
       font-size: 1rem;
       text-overflow: ellipsis;
     }
@@ -76,6 +85,8 @@ const props = defineProps({
       background-color: #000;
       color: #fff;
       transition: 0.3s ease all;
+      padding: .8rem;
+      border-radius: .2rem;
 
       &:hover {
         background-color: transparent;

@@ -1,11 +1,11 @@
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useCart } from "../stores/cart";
 
 const { decreaseQuantity, increaseQuantity, deleteProductFromCart, emptyCart, cart } = useCart();
 
 const totalPayment = computed(() => {
-  return cart.reduce((total, product) => total + product.quantity * product.precio, 0);
+  return cart.reduce((total, product) => total + product.quantity * product.price, 0);
 });
 
 const cartQuantity = computed(() => {
@@ -37,12 +37,12 @@ const cartQuantity = computed(() => {
               <td>
                 <img
                   class="img-fluid"
-                  :src="`../../public/img/${cartItem.imagen}.jpg`"
-                  alt="imagen guitarra"
+                  :src="cartItem.thumbnail"
+                  :alt="`imagen de ${cartItem.title}`"
                 />
               </td>
-              <td>{{ cartItem.nombre }}</td>
-              <td class="fw-bold">${{ cartItem.precio }}</td>
+              <td>{{ cartItem.title }}</td>
+              <td class="fw-bold">${{ cartItem.price }}</td>
               <td class="flex align-items-start gap-4">
                 <button type="button" class="btn btn-dark" @click="decreaseQuantity(cartItem.id)">
                   -

@@ -1,35 +1,37 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useCart } from "../stores/cart";
-import { db } from "../data/shopItems";
+import { useShop } from "../stores/shop";
+
+const shopStore = useShop();
 
 const { addToCart } = useCart();
-const promotionProduct = ref({});
 
-onMounted(() => {
-  promotionProduct.value = db[3];
-});
 </script>
 
 <template>
   <header class="header">
     <div class="row mt-5">
       <div class="col-md-6 text-center text-md-start pt-5">
-        <h1 class="display-2 fw-bold">Modelo {{ promotionProduct.nombre }}</h1>
+        <h1 class="display-2 fw-bold">{{ shopStore.singleProduct.title }}</h1>
         <p class="mt-5 fs-5 text-white">
-          {{ promotionProduct.descripcion }}
+          {{ shopStore.singleProduct.description }}
         </p>
-        <p class="text-primary fs-1 fw-black">${{ promotionProduct.precio }}</p>
+        <p class="text-primary fs-1 fw-black">${{ shopStore.singleProduct.prcie }}</p>
         <button
           type="button"
           class="btn fs-4 bg-primary text-white py-2 px-5"
-          @click="addToCart(promotionProduct)"
+          @click="addToCart(shopStore.singleProduct)"
         >
           Agregar al Carrito
         </button>
       </div>
     </div>
-    <img class="header-product" src="/img/header_guitarra.png" alt="imagen header" />
+    <img
+      class="header-product"
+      .src="shopStore.singleProduct.image"
+      :alt="`imagen header ${shopStore.singleProduct.title}`"
+    />
   </header>
 </template>
 
