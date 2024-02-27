@@ -1,15 +1,14 @@
-
 <script setup>
+import { useCart } from "../stores/cart";
+
+const { addToCart } = useCart();
 
 const propos = defineProps({
   item: {
     type: Object,
-    required: true
-  }
-})
-
-defineEmits(['add-to-card'])
-
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -23,7 +22,7 @@ defineEmits(['add-to-card'])
         {{ item.descripcion }}
       </p>
       <p class="fw-black text-primary fs-3">${{ item.precio }}</p>
-      <button type="button" class="btn btn-dark w-100" @click="$emit('add-to-card', item)">
+      <button type="button" class="btn btn-dark w-100" @click="addToCart(item)">
         Agregar al Carrito
       </button>
     </div>
