@@ -11,6 +11,6 @@ export default {
     return api.get(`products/categories/`)
   },
   getProductByCategory(cat) {
-    return api.get(`products/categories/${cat}`)
+    return api.get(`products/category/${cat}`)
   }
 };

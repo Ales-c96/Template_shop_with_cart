@@ -13,23 +13,23 @@ const props = defineProps({
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'product', params: { id: product.id } }">
-    <div class="card">
+  <div class="card">
+    <RouterLink :to="{ name: 'product', params: { id: product.id } }">
       <div class="card__image">
         <img :src="product.image" alt="imagen guitarra" />
       </div>
-      <div class="card-info">
-        <h3 class="card-info__name">{{ product.title }}</h3>
-        <p class="card-info__description">
-          {{ product.description }}
-        </p>
-        <p class="card-info__price">${{ product.price }}</p>
-        <button type="button" class="card-info__button" @click="addToCart(product)">
-          Agregar al Carrito
-        </button>
-      </div>
+    </RouterLink>
+    <div class="card-info">
+      <h3 class="card-info__name">{{ product.title }}</h3>
+      <p class="card-info__description">
+        {{ product.description }}
+      </p>
+      <p class="card-info__price">${{ product.price }}</p>
+      <button type="button" class="card-info__button" @click="addToCart(product)">
+        Agregar al Carrito
+      </button>
     </div>
-  </RouterLink>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -39,6 +39,7 @@ const props = defineProps({
   flex-direction: column;
   gap: 1rem;
   width: 25rem;
+  max-height: 35rem;
   margin: 2rem;
   box-shadow: 0px 0px 20px 0px #00000039;
   border-radius: 0.2rem;
@@ -56,13 +57,14 @@ const props = defineProps({
 
     & img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
-      border-radius: .2rem;
+      border-radius: 0.2rem;
     }
   }
 
   &-info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -72,8 +74,11 @@ const props = defineProps({
     }
     &__description {
       color: #000;
+      width: 100%;
       height: 5rem;
       font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
       text-overflow: ellipsis;
     }
     &__price {
@@ -85,8 +90,8 @@ const props = defineProps({
       background-color: #000;
       color: #fff;
       transition: 0.3s ease all;
-      padding: .8rem;
-      border-radius: .2rem;
+      padding: 0.8rem;
+      border-radius: 0.2rem;
 
       &:hover {
         background-color: transparent;

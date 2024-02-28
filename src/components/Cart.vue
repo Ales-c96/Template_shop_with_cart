@@ -37,7 +37,7 @@ const cartQuantity = computed(() => {
               <td>
                 <img
                   class="img-fluid"
-                  :src="cartItem.thumbnail"
+                  :src="cartItem.image"
                   :alt="`imagen de ${cartItem.title}`"
                 />
               </td>

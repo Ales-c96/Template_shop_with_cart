@@ -2,6 +2,7 @@
 import { useShop } from "../stores/shop";
 import Header from "../components/Header.vue";
 import CardItem from "../components/CardItem.vue";
+import Searcher from "../components/Searcher.vue"
 
 const shopStore = useShop();
 </script>
@@ -11,13 +12,7 @@ const shopStore = useShop();
     <Header />
     <div class="container">
       <h2 class="container__title">Nuestra Colección</h2>
-      <form>
-        <label for="categories">Categorías:</label>
-        <select name="categories" id="categories">
-          <option value="">-- Selecciona una categoría --</option>
-          <option v-for="category in shopStore.categories" :value="category">{{ category }}</option>
-        </select>
-      </form>
+      <Searcher/>
       <div class="container__content">
         <CardItem v-for="product in shopStore.products" :key="product.id" :product="product" />
       </div>

@@ -6,6 +6,7 @@ export const useShop = defineStore("shop", () => {
   const products = ref({});
   const singleProduct = ref({});
   const categories = ref([]);
+  const categorySelected = ref("");
 
   onMounted(async () => {
     try {
@@ -30,9 +31,23 @@ export const useShop = defineStore("shop", () => {
     }
   });
 
+  async function getCategory() {
+    if (!categorySelected.value) {
+      return;
+    }
+    try {
+      const { data: product } = await apiService.getProductByCategory(categorySelected.value);
+      products.value = product;
+    } catch (error) {
+      console.error("Error al obtener la categoria: ", error);
+    }
+  }
+
   return {
     products,
     singleProduct,
     categories,
+    getCategory,
+    categorySelected,
   };
 });
