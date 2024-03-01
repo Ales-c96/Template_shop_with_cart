@@ -9,27 +9,11 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    {
-      path: "/shop",
-      name: "shop",
-      component: () => import("../views/ShopView.vue"),
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/contact",
-      name: "contact",
-      component: () => import("../views/ContactView.vue"),
-    },
-    {
-      path: "/product/:id",
-      name: "product",
-      component: () => import("../views/ProductView.vue"),
-      props: true,
-    },
+    // {
+    //   path: "/shop",
+    //   name: "shop",
+    //   component: () => import("../views/ShopView.vue"),
+    // },
   ],
 });
 

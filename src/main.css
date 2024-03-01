@@ -1,0 +1,11 @@
+:root {
+    --primary: #11323c;
+    --primary-bg: #fffaf4;
+    --primary-bg-blur: #fffaf49c;
+    --secondary-bg: #183842;
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: "Roboto", sans-serif;
+}

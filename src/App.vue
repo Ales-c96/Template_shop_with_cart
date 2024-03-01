@@ -8,7 +8,11 @@ import Footer from "./components/Footer.vue";
   <div>
     <Navbar />
     <main class="container">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <transition name="fade" mode="out-in" tag="div" class="main__content">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </main>
     <Footer />
   </div>
@@ -18,5 +22,16 @@ import Footer from "./components/Footer.vue";
 .container {
   width: 100%;
   margin: auto;
+  height: 100vh;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

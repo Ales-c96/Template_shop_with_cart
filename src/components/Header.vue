@@ -1,65 +1,67 @@
-<script setup>
-import { onMounted, ref } from "vue";
-import { useCart } from "../stores/cart";
-import { useShop } from "../stores/shop";
-
-const shopStore = useShop();
-
-const { addToCart } = useCart();
-</script>
-
 <template>
-  <header class="header">
-    <div class="row mt-5">
-      <div class="col-md-6 text-center text-md-start pt-5">
-        <h1 class="display-2 fw-bold">{{ shopStore.singleProduct.title }}</h1>
-        <p class="mt-5 fs-5 text-white">
-          {{ shopStore.singleProduct.description }}
+  <article>
+    <div class="header">
+      <div class="header-image"></div>
+      <div class="header-text">
+        <h1 class="header-text__title">Lorem ipsum dolor sit amet</h1>
+        <p class="header-text__subtitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <p class="text-primary fs-1 fw-black">${{ shopStore.singleProduct.price }}</p>
-        <button
-          type="button"
-          class="btn fs-4 bg-primary text-white py-2 px-5"
-          @click="addToCart(shopStore.singleProduct)"
-        >
-          Agregar al Carrito
-        </button>
+        <div class="header-text__social">
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+        </div>
       </div>
     </div>
-    <div class="header__product">
-      <img
-        .src="shopStore.singleProduct.image"
-        :alt="`imagen header ${shopStore.singleProduct.title}`"
-      />
-    </div>
-  </header>
+  </article>
 </template>
 
-<style scoped lang="scss">
+<script setup></script>
+
+<style lang="scss" scoped>
 .header {
-  background-position: 50%;
-  background-size: cover;
-  position: relative;
-  padding: 3rem 5rem;
-  background-color: #000000b3;
+  display: flex;
+  width: 100%;
+  height: 100lvh;
+  padding: 1rem;
 
-  &__product {
-    position: absolute;
-    right: 20rem;
-    bottom: 10rem;
-    width: 20rem;
-    max-height: 35rem;
-    box-shadow: 0px 0px 20px 0px #00000039;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-timing-function: ease-in-out;
-    animation-name: animarImagen;
-    z-index: 5;
+  &-image {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(img/header-bg.webp);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    background-color: var(--secondary-bg);
+    border-radius: 1rem;
+  }
+  &-text {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    & img {
-      width: 100%;
-      height: 100%;
-      border-radius: 1rem;
+    &__title {
+      width: 35rem;
+      text-align: center;
+      font-family: "Julius Sans One", sans-serif;
+      font-weight: 500;
+      font-size: 5rem;
+    }
+    &__subtitle {
+        font-family: "Julius Sans One", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2rem 0;
+    }
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
     }
   }
 }

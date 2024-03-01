@@ -16,9 +16,10 @@ const cartQuantity = computed(() => {
 <template>
   <div class="carrito">
     <div class="cart">
-      <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
-      <div class="cart-quantity">{{ cartQuantity }}</div>
+      <img src="/img/carrito.png" alt="imagen carrito" />
     </div>
+    <p>CART</p>
+    <div class="cart-quantity">({{ cartQuantity }})</div>
     <div id="carrito" class="bg-white p-3">
       <p v-if="cart.length === 0" class="text-center m-0">El carrito esta vacio</p>
       <div v-else>
@@ -35,11 +36,7 @@ const cartQuantity = computed(() => {
           <tbody>
             <tr v-for="cartItem in cart" :key="cartItem">
               <td>
-                <img
-                  class="img-fluid"
-                  :src="cartItem.image"
-                  :alt="`imagen de ${cartItem.title}`"
-                />
+                <img class="img-fluid" :src="cartItem.image" :alt="`imagen de ${cartItem.title}`" />
               </td>
               <td>{{ cartItem.title }}</td>
               <td class="fw-bold">${{ cartItem.price }}</td>
@@ -76,27 +73,32 @@ const cartQuantity = computed(() => {
 <style lang="scss" scoped>
 .cart {
   position: relative;
+  width: 1.2rem;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .carrito {
-  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .7rem;
+  background-color: var(--secondary-bg);
   border: none;
-  max-width: 2rem;
   position: relative;
   z-index: 100;
+  border-radius: 0.4rem;
+  color: #fff;
 }
 
 .cart-quantity {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: -0.5em;
-  top: -0.5em;
-  height: 1.5em;
-  width: 1.5em;
-  border-radius: 100vw;
-  background-color: #fd0000e9;
+  border-radius: 50%;
   color: #ffffff;
 }
 
