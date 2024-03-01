@@ -1,43 +1,46 @@
 <script setup>
-import Btn from "./UI/Btn.vue";
+import ProductItem from "./ProductItem.vue";
+import products from "../data/products.json";
 </script>
 
 <template>
-  <section class="about" id="about">
-    <div class="about-image">
-      <div class="about-image__img">
-        <div class="about-image__title">
-          <p>+10 Años de experiencia</p>
-        </div>
-        <img src="/img/about-img.webp" alt="" />
-        <div class="about-image__text">
-          <p>y seguiremos creciendo</p>
-        </div>
-      </div>
-    </div>
-    <div class="about-description">
-      <h2 class="about-description__title">Nuestra Historia</h2>
-      <p class="about-description__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nisi eligendi tenetur
-        perspiciatis itaque nemo aut, perferendis ducimus rerum debitis voluptatum ex voluptatem
-        adipisci cumque eos consequatur quia repellendus temporibus.
+  <section class="collection" id="collection">
+    <div class="collection-description">
+      <h2 class="collection-description__title">Nuestra Colección</h2>
+      <p class="collection-description__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
-      <Btn>Leer Más</Btn>
+    </div>
+    <div class="collection-carousel">
+      <v-carousel cycle interval="3000" height="400" progress="#183842" hide-delimiters>
+        <template v-slot:prev="{ props }">
+          <v-btn size="small" color="#183842" variant="elevated" @click="props.onClick"
+            >Anterior</v-btn
+          >
+        </template>
+        <template v-slot:next="{ props }">
+          <v-btn size="small" color="#183842" variant="elevated" @click="props.onClick"
+            >Siguiente</v-btn
+          >
+        </template>
+        <v-carousel-item v-for="product in products" :key="product.id">
+          <ProductItem :product="product" />
+        </v-carousel-item>
+      </v-carousel>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.about {
-  min-height: 50rem;
+.collection {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 1rem;
 
-  &-image {
-    width: 50%;
-
+  &-carousel {
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,21 +100,22 @@ import Btn from "./UI/Btn.vue";
     }
   }
   &-description {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
 
     &__title {
-        font-family: "Julius Sans One", sans-serif;
-        font-size: 4rem;
+      text-align: center;
+      font-family: "Julius Sans One", sans-serif;
+      font-size: 4rem;
     }
     &__text {
-        width: 75%;
-        font-weight: 300;
-        line-height: 1.4rem;
+      text-align: center;
+      font-weight: 300;
+      line-height: 1.4rem;
+      margin-bottom: 2rem;
     }
   }
 }

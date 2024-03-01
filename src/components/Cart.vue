@@ -19,7 +19,7 @@ const cartQuantity = computed(() => {
       <img src="/img/carrito.png" alt="imagen carrito" />
     </div>
     <p>CART</p>
-    <div class="cart-quantity">({{ cartQuantity }})</div>
+    <div class="cart-quantity">{{ cartQuantity }}</div>
     <div id="carrito" class="bg-white p-3">
       <p v-if="cart.length === 0" class="text-center m-0">El carrito esta vacio</p>
       <div v-else>

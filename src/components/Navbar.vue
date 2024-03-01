@@ -15,8 +15,8 @@ onMounted(() => {
 <template>
   <nav class="nav" :class="[onScroll ? 'nav-fixed' : '']">
     <div class="nav__items">
-      <a class="nav__items-link roboto-thin" href="">About Us</a>
-      <a class="nav__items-link" href="">Collection</a>
+      <a class="nav__items-link roboto-thin" href="#about">About Us</a>
+      <a class="nav__items-link" href="#collection">Collection</a>
       <a class="nav__items-link" href="">Contact Us</a>
       <Cart />
     </div>
@@ -53,6 +53,11 @@ onMounted(() => {
       font-weight: 500;
       color: var(--primary);
       transition: .3s ease all;
+
+      &:hover {
+        transform: scale(1.1);
+        color: var(--primary-hover);
+      }
     }
   }
 }

@@ -1,12 +1,14 @@
 <script setup>
 import Header from "../components/Header.vue";
 import AboutSection from "../components/AboutSection.vue";
+import CollectionSection from "../components/CollectionSection.vue";
 </script>
 
 <template>
   <div>
     <Header />
     <AboutSection />
+    <CollectionSection />
   </div>
 </template>
 

@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Lorem ipsum dolor",
+        "price": "19,99",
+        "description": "Lorem ipsum sit amet",
+        "image": "/img/products/plant1.webp",
+        "position": "left"
+    },
+    {
+        "title": "Lorem ipsum",
+        "price": "24,99",
+        "description": "Lorem ipsum dolor",
+        "image": "/img/products/plant2.webp",
+        "position": "right"
+    },
+    {
+        "title": "Lorem ipsum dolor",
+        "price": "34,99",
+        "description": "Lorem ipsum amet",
+        "image": "/img/products/plant3.webp",
+        "position": "right"
+    },
+    {
+        "title": "Lorem ipsum",
+        "price": "29,99",
+        "description": "Lorem ipsum sit amet",
+        "image": "/img/products/plant4.webp",
+        "position": "left"
+    },
+    {
+        "title": "Lorem ipsum dolor",
+        "price": "39,99",
+        "description": "Lorem ipsum dolor sit",
+        "image": "/img/products/plant5.webp",
+        "position": "left"
+    },
+    {
+        "title": "Lorem ipsum",
+        "price": "44,99",
+        "description": "Lorem ipsum amet",
+        "image": "/img/products/plant6.webp",
+        "position": "left"
+    },
+    {
+        "title": "Lorem ipsum dolor",
+        "price": "49,99",
+        "description": "Lorem ipsum dolor",
+        "image": "/img/products/plant7.webp",
+        "position": "right"
+    },
+    {
+        "title": "Lorem ipsum",
+        "price": "54,99",
+        "description": "Lorem ipsum sit amet",
+        "image": "/img/products/plant8.webp",
+        "position": "right"
+    },
+    {
+        "title": "Lorem ipsum dolor",
+        "price": "59,99",
+        "description": "Lorem ipsum dolor sit",
+        "image": "/img/products/plant9.webp",
+        "position": "left"
+    },
+    {
+        "title": "Lorem ipsum",
+        "price": "64,99",
+        "description": "Lorem ipsum amet",
+        "image": "/img/products/plant10.webp",
+        "position": "left"
+    }
+]
