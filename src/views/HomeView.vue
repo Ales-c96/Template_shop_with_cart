@@ -1,13 +1,12 @@
 <script setup>
 import Header from "../components/Header.vue";
+import AboutSection from "../components/AboutSection.vue";
 </script>
 
 <template>
   <div>
     <Header />
-    <div class="home">
-
-    </div>
+    <AboutSection />
   </div>
 </template>
 

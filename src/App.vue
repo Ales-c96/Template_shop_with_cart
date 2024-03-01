@@ -22,7 +22,6 @@ import Footer from "./components/Footer.vue";
 .container {
   width: 100%;
   margin: auto;
-  height: 100vh;
 }
 
 .fade-enter-active,

@@ -25,7 +25,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .nav-fixed {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   box-shadow: 0px 0px 20px 5px #00000095;
   background-color: var(--primary-bg-blur);
 }

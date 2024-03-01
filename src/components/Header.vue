@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <header>
     <div class="header">
       <div class="header-image"></div>
       <div class="header-text">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-  </article>
+  </header>
 </template>
 
 <script setup></script>
