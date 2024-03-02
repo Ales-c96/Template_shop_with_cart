@@ -2,6 +2,7 @@
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import Up from "./components/UI/Up.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import Footer from "./components/Footer.vue";
           <component :is="Component" />
         </transition>
       </RouterView>
+      <Up />
     </main>
     <Footer />
   </div>
@@ -21,12 +23,13 @@ import Footer from "./components/Footer.vue";
 <style lang="scss" scoped>
 .container {
   width: 100%;
+  position: relative;
   margin: auto;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .fade-enter-from,

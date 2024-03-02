@@ -15,9 +15,9 @@ onMounted(() => {
 <template>
   <nav class="nav" :class="[onScroll ? 'nav-fixed' : '']">
     <div class="nav__items">
-      <a class="nav__items-link roboto-thin" href="#about">About Us</a>
-      <a class="nav__items-link" href="#collection">Collection</a>
-      <a class="nav__items-link" href="">Contact Us</a>
+      <a class="nav__items-link roboto-thin" href="#about">Nosotros</a>
+      <a class="nav__items-link" href="#collection">Colección</a>
+      <a class="nav__items-link" href="#contact">Contáctanos</a>
       <Cart />
     </div>
   </nav>

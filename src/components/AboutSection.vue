@@ -22,7 +22,7 @@ import Btn from "./UI/Btn.vue";
         perspiciatis itaque nemo aut, perferendis ducimus rerum debitis voluptatum ex voluptatem
         adipisci cumque eos consequatur quia repellendus temporibus.
       </p>
-      <Btn>Leer Más</Btn>
+      <Btn><i class="fa-solid fa-book-open"></i> Leer Más</Btn>
     </div>
   </section>
 </template>

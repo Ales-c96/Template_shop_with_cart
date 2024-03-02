@@ -2,6 +2,8 @@
 import Header from "../components/Header.vue";
 import AboutSection from "../components/AboutSection.vue";
 import CollectionSection from "../components/CollectionSection.vue";
+import GridSection from "../components/GridSection.vue";
+import ContactSection from "../components/ContactSection.vue";
 </script>
 
 <template>
@@ -9,6 +11,8 @@ import CollectionSection from "../components/CollectionSection.vue";
     <Header />
     <AboutSection />
     <CollectionSection />
+    <GridSection />
+    <ContactSection />
   </div>
 </template>
 

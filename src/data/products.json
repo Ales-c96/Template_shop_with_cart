@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "title": "Lorem ipsum dolor",
         "price": "19,99",
         "description": "Lorem ipsum sit amet",
@@ -7,6 +8,7 @@
         "position": "left"
     },
     {
+        "id": "2",
         "title": "Lorem ipsum",
         "price": "24,99",
         "description": "Lorem ipsum dolor",
@@ -14,6 +16,7 @@
         "position": "right"
     },
     {
+        "id": "3",
         "title": "Lorem ipsum dolor",
         "price": "34,99",
         "description": "Lorem ipsum amet",
@@ -21,6 +24,7 @@
         "position": "right"
     },
     {
+        "id": "4",
         "title": "Lorem ipsum",
         "price": "29,99",
         "description": "Lorem ipsum sit amet",
@@ -28,6 +32,7 @@
         "position": "left"
     },
     {
+        "id": "5",
         "title": "Lorem ipsum dolor",
         "price": "39,99",
         "description": "Lorem ipsum dolor sit",
@@ -35,6 +40,7 @@
         "position": "left"
     },
     {
+        "id": "6",
         "title": "Lorem ipsum",
         "price": "44,99",
         "description": "Lorem ipsum amet",
@@ -42,6 +48,7 @@
         "position": "left"
     },
     {
+        "id": "7",
         "title": "Lorem ipsum dolor",
         "price": "49,99",
         "description": "Lorem ipsum dolor",
@@ -49,6 +56,7 @@
         "position": "right"
     },
     {
+        "id": "8",
         "title": "Lorem ipsum",
         "price": "54,99",
         "description": "Lorem ipsum sit amet",
@@ -56,6 +64,7 @@
         "position": "right"
     },
     {
+        "id": "9",
         "title": "Lorem ipsum dolor",
         "price": "59,99",
         "description": "Lorem ipsum dolor sit",
@@ -63,6 +72,7 @@
         "position": "left"
     },
     {
+        "id": "10",
         "title": "Lorem ipsum",
         "price": "64,99",
         "description": "Lorem ipsum amet",

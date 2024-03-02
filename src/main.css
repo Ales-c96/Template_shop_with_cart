@@ -1,6 +1,6 @@
 :root {
     --primary: #11323c;
-    --primary-hover: #11323cae;
+    --primary-hover: #13657f;
     --primary-bg: #fffaf4;
     --primary-bg-blur: #fffaf49c;
     --secondary-bg: #183842;
@@ -13,6 +13,11 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+hr {
+    width: 80%;
+    color: var(--primary);
 }
 
 ::-webkit-scrollbar {

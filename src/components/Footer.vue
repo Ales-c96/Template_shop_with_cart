@@ -9,7 +9,7 @@
 <style scoped lang="scss">
 .footer {
   width: 100%;
-  height: 15rem;
+  height: 20rem;
   padding: 1rem;
   margin: 10rem 0 0 0;
   background-image: url(img/footer-img.webp);
