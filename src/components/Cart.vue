@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useCart } from "../stores/cart";
 
 const { decreaseQuantity, increaseQuantity, deleteProductFromCart, emptyCart, cart } = useCart();
@@ -18,16 +18,18 @@ const totalPayment = computed(() => {
 const cartQuantity = computed(() => {
   return cart.reduce((total, product) => total + product.quantity, 0);
 });
+
+const show = ref(false);
 </script>
 
 <template>
-  <div class="cart">
+  <div class="cart" @click="show = !show">
     <div class="cart-img">
       <img loading="lazy" src="/img/carrito.png" alt="imagen carrito" />
     </div>
     <p>CART</p>
     <div class="cart-quantity">{{ cartQuantity }}</div>
-    <div id="cart" class="cart-data">
+    <div v-if="show" id="cart" class="cart-data">
       <p v-if="cart.length === 0" class="cart-data__text">El carrito esta vacio</p>
       <div v-else>
         <table class="cart-data__table">
@@ -182,13 +184,8 @@ const cartQuantity = computed(() => {
   }
 }
 
-.cart #cart {
-  display: none;
+#cart {
   position: absolute;
-}
-
-.cart:hover #cart {
-  display: block;
   background-color: var(--primary-bg);
   box-shadow: 0px 20px 20px 0px rgb(0 0 0 / 18%);
   padding: 10px;
