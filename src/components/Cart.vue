@@ -27,7 +27,7 @@ const show = ref(false);
     <div class="cart-img">
       <img loading="lazy" src="/img/carrito.png" alt="imagen carrito" />
     </div>
-    <p>CART</p>
+    <p>Carrito</p>
     <div class="cart-quantity">{{ cartQuantity }}</div>
     <div v-if="show" id="cart" class="cart-data">
       <p v-if="cart.length === 0" class="cart-data__text">El carrito esta vacio</p>
