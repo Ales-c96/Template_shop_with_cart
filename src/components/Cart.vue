@@ -23,7 +23,7 @@ const cartQuantity = computed(() => {
 <template>
   <div class="cart">
     <div class="cart-img">
-      <img src="/img/carrito.png" alt="imagen carrito" />
+      <img loading="lazy" src="/img/carrito.png" alt="imagen carrito" />
     </div>
     <p>CART</p>
     <div class="cart-quantity">{{ cartQuantity }}</div>
@@ -44,6 +44,7 @@ const cartQuantity = computed(() => {
             <tr v-for="cartItem in cart" :key="cartItem">
               <td>
                 <img
+                  loading="lazy"
                   class="cart-productImg"
                   :src="cartItem.image"
                   :alt="`imagen de ${cartItem.title}`"
@@ -113,7 +114,6 @@ const cartQuantity = computed(() => {
   }
 
   &-data {
-    
     &__text {
       color: var(--primary);
       font-weight: bold;
@@ -175,8 +175,8 @@ const cartQuantity = computed(() => {
 
     &--empty {
       width: 100%;
-      border-radius: .2rem;
-      padding: .5rem 1rem;
+      border-radius: 0.2rem;
+      padding: 0.5rem 1rem;
     }
   }
 }
@@ -204,5 +204,4 @@ const cartQuantity = computed(() => {
 #cart img {
   width: 5rem;
 }
-
 </style>

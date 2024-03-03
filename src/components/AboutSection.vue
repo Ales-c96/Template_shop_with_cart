@@ -9,7 +9,7 @@ import Btn from "./UI/Btn.vue";
         <div class="about-image__title">
           <p>+10 Años de experiencia</p>
         </div>
-        <img src="/img/about-img.webp" alt="" />
+        <img loading="lazy" src="/img/about-img.webp" alt="" />
         <div class="about-image__text">
           <p>y seguiremos creciendo</p>
         </div>
