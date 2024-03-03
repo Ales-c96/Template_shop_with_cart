@@ -83,6 +83,7 @@ const cartQuantity = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+@import '../utilities.scss';
 .cart {
   display: flex;
   align-items: center;
@@ -199,6 +200,10 @@ const cartQuantity = computed(() => {
   margin-left: unset;
   margin-right: unset;
   border-radius: 0 0 1rem 1rem;
+  @include breakpoint(900px) {
+    min-width: 23rem;
+    right: -4rem;
+  }
 }
 
 #cart img {
