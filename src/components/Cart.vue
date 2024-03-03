@@ -97,6 +97,7 @@ const show = ref(false);
   z-index: 100;
   border-radius: 0.4rem;
   color: #fff;
+  cursor: pointer;
 
   &-img {
     position: relative;
