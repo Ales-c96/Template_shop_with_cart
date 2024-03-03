@@ -36,7 +36,7 @@
     width: 40%;
     height: 100%;
     overflow: hidden;
-    background-image: url(img/header-bg.webp);
+    background-image: url('/img/header-bg.webp');
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;

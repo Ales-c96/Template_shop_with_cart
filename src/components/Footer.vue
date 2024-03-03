@@ -20,7 +20,7 @@
   height: 20rem;
   padding: 1rem;
   margin: 10rem 0 0 0;
-  background-image: url(img/footer-img.webp);
+  background-image: url('/img/footer-img.webp');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 38rem;
