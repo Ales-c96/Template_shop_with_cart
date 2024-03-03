@@ -62,7 +62,6 @@ const props = defineProps({
     & h3 {
       font-family: "Julius Sans One", sans-serif;
       text-align: center;
-      font-size: 2rem;
       font-weight: 500;
       color: #fff;
     }

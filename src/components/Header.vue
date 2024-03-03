@@ -20,11 +20,17 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+@import "../utilities.scss";
 .header {
-  display: flex;
   width: 100%;
+  position: relative;
+  display: flex;
   height: 100lvh;
   padding: 1rem;
+
+  @include breakpoint(900px) {
+    flex-direction: column;
+  }
 
   &-image {
     width: 40%;
@@ -36,6 +42,10 @@
     background-size: cover;
     background-color: var(--secondary-bg);
     border-radius: 1rem;
+
+    @include breakpoint(900px) {
+      width: 100%;
+    }
   }
   &-text {
     width: 60%;
@@ -45,23 +55,43 @@
     align-items: center;
     flex-direction: column;
 
+    @include breakpoint(900px) {
+      width: 100%;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      backdrop-filter: blur(2px);
+    }
+
     &__title {
       width: 35rem;
       text-align: center;
       font-family: "Julius Sans One", sans-serif;
       font-weight: 500;
-      font-size: 5rem;
+
+      @include breakpoint(900px) {
+        width: 20rem;
+        color: #fff;
+        font-weight: bold;
+      }
     }
     &__subtitle {
-        font-family: "Julius Sans One", sans-serif;
-        font-size: 1rem;
-        font-weight: 300;
-        margin: 2rem 0;
+      font-family: "Julius Sans One", sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 2rem 0;
+
+      @include breakpoint(900px) {
+        width: 20rem;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+      }
     }
     &__social {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
     }
   }
 }

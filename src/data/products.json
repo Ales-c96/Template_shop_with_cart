@@ -1,13 +1,5 @@
 [
     {
-        "id": "1",
-        "title": "Lorem ipsum dolor",
-        "price": "19,99",
-        "description": "Lorem ipsum sit amet",
-        "image": "/img/products/plant1.webp",
-        "position": "left"
-    },
-    {
         "id": "2",
         "title": "Lorem ipsum",
         "price": "24,99",
@@ -15,6 +7,7 @@
         "image": "/img/products/plant2.webp",
         "position": "right"
     },
+
     {
         "id": "3",
         "title": "Lorem ipsum dolor",

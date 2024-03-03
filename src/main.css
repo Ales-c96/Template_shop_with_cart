@@ -6,14 +6,27 @@
     --secondary-bg: #183842;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--primary-bg);
     font-family: "Roboto", sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+h1 {
+    font-size: 5rem;
 }
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
 
 hr {
     width: 80%;
@@ -32,4 +45,32 @@ hr {
 
 ::-webkit-scrollbar-track {
     background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
 }

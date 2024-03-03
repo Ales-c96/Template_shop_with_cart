@@ -4,9 +4,9 @@ import products from "../data/products.json";
 </script>
 
 <template>
-  <section class="grid-container">
+  <section class="grid-container" id="collection">
     <div class="grid-container__title">
-      <h2>Explora la Galería</h2>
+      <h2>- Explora la Galería -</h2>
       <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <ProductGrid :products="products" />
@@ -14,6 +14,7 @@ import products from "../data/products.json";
 </template>
 
 <style lang="scss" scoped>
+@import '../utilities.scss';
 .grid-container {
   width: 100%;
   display: flex;
@@ -23,6 +24,10 @@ import products from "../data/products.json";
   gap: 5rem;
   margin: 5rem 0 0 0;
   padding: 1rem;
+
+  @include breakpoint(900px) {
+    margin: 0;
+  }
 
   &__title {
     display: flex;
@@ -34,7 +39,6 @@ import products from "../data/products.json";
     & h2 {
       text-align: center;
       font-family: "Julius Sans One", sans-serif;
-      font-size: 3.5rem;
     }
 
     & p {

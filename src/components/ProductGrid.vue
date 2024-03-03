@@ -33,6 +33,7 @@ const props = defineProps({
   </div>
 </template>
 <style lang="scss" scoped>
+@import "../utilities.scss";
 .left {
   left: 0;
 }
@@ -48,6 +49,10 @@ const props = defineProps({
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+
+  @include breakpoint(900px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .card {
   width: 100%;

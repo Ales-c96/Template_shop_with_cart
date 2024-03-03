@@ -26,6 +26,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@import '../../utilities.scss';
 .up {
   width: 2.5rem;
   height: 2.5rem;
@@ -44,6 +45,11 @@ onMounted(() => {
 
   &:hover {
     background-color: var(--primary-hover);
+  }
+
+  @include breakpoint(900px) {
+    bottom: 1rem;
+    right: 2rem;
   }
 }
 

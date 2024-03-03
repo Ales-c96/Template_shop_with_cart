@@ -6,7 +6,7 @@ import products from "../data/products.json";
 <template>
   <section class="collection" id="collection">
     <div class="collection-description">
-      <h2 class="collection-description__title">Nuestra Colección</h2>
+      <h2 class="collection-description__title">- Nuestra Colección -</h2>
       <p class="collection-description__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
@@ -18,6 +18,7 @@ import products from "../data/products.json";
 </template>
 
 <style lang="scss" scoped>
+@import "../utilities.scss";
 .collection {
   display: flex;
   justify-content: center;
@@ -35,7 +36,6 @@ import products from "../data/products.json";
     &__title {
       text-align: center;
       font-family: "Julius Sans One", sans-serif;
-      font-size: 4rem;
     }
     &__text {
       text-align: center;
