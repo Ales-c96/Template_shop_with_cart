@@ -1,43 +1,34 @@
 <script setup>
-import { ref } from "vue";
 import { useField, useForm } from "vee-validate";
 
-const { handleSubmit, handleReset } = useForm({
+const { handleSubmit } = useForm({
   validationSchema: {
     name(value) {
       if (value?.length >= 2) return true;
 
-      return "Name needs to be at least 2 characters.";
+      return "El nombre debe tener al menos 2 carácteres.";
     },
     phone(value) {
       if (value?.length > 9 && /[0-9-]+/.test(value)) return true;
 
-      return "Phone number needs to be at least 9 digits.";
+      return "El numero de letéfono debe tener al menos 9 carácteres.";
     },
     email(value) {
       if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
 
-      return "Must be a valid e-mail.";
+      return "Debe ser un email válido.";
     },
-    select(value) {
-      if (value) return true;
+    mesage(value) {
+      if (value?.length >= 5) return true;
 
-      return "Select an item.";
-    },
-    checkbox(value) {
-      if (value === "1") return true;
-
-      return "Must be checked.";
+      return "El mensaje debe tener al menos 5 carácteres.";
     },
   },
 });
 const name = useField("name");
 const phone = useField("phone");
 const email = useField("email");
-const select = useField("select");
-const checkbox = useField("checkbox");
-
-const items = ref(["Item 1", "Item 2", "Item 3", "Item 4"]);
+const mesage = useField("mesage");
 
 const submit = handleSubmit((values) => {
   alert(JSON.stringify(values, null, 2));
@@ -50,45 +41,44 @@ const submit = handleSubmit((values) => {
       v-model="name.value.value"
       :counter="10"
       :error-messages="name.errorMessage.value"
-      label="Name"
+      label="Nombre"
+      class="form__item"
     ></v-text-field>
-
     <v-text-field
       v-model="phone.value.value"
       :counter="7"
       :error-messages="phone.errorMessage.value"
-      label="Phone Number"
+      label="Teléfono"
+      class="form__item"
     ></v-text-field>
-
     <v-text-field
       v-model="email.value.value"
       :error-messages="email.errorMessage.value"
       label="E-mail"
+      class="form__item"
     ></v-text-field>
-
-    <v-select
-      v-model="select.value.value"
-      :error-messages="select.errorMessage.value"
-      :items="items"
-      label="Select"
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox.value.value"
-      :error-messages="checkbox.errorMessage.value"
-      label="Option"
-      type="checkbox"
-      value="1"
-    ></v-checkbox>
-
-    <v-btn class="me-4" type="submit"> submit </v-btn>
-
-    <v-btn @click="handleReset"> clear </v-btn>
+    <v-text-field
+      v-model="mesage.value.value"
+      :error-messages="mesage.errorMessage.value"
+      label="Mensaje"
+      class="form__item"
+    ></v-text-field>
+    <v-btn class="form__item-btn" type="submit"> submit </v-btn>
   </form>
 </template>
 
 <style lang="scss" scoped>
 .form {
-    width: 75%;
+  width: 100%;
+  &__item {
+    &-btn {
+      background-color: var(--primary);
+      color: #fff;
+
+      &:hover {
+        background-color: var(--primary-hover);
+      }
+    }
+  }
 }
 </style>

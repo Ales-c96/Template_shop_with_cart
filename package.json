@@ -19,8 +19,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
-    "@vue-leaflet/vue-leaflet": "^0.10.1",
-    "leaflet": "^1.9.4",
     "sass": "^1.71.1",
     "vite": "^5.0.8"
   }
