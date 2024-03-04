@@ -202,8 +202,11 @@ const show = ref(false);
   border-radius: 0 0 1rem 1rem;
   @include breakpoint(900px) {
     width: 24rem;
-    right: 0.2rem;
     min-width: 20rem;
+    max-height: 90lvh;
+    right: 0.2rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 
