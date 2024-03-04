@@ -23,12 +23,14 @@ const show = ref(false);
 </script>
 
 <template>
-  <div class="cart" @click="show = !show">
-    <div class="cart-img">
-      <img loading="lazy" src="/img/carrito.png" alt="imagen carrito" />
+  <div>
+    <div class="cart" @click="show = !show">
+      <div class="cart-img">
+        <img loading="lazy" src="/img/carrito.png" alt="imagen carrito" />
+      </div>
+      <p>Carrito</p>
+      <div class="cart-quantity">{{ cartQuantity }}</div>
     </div>
-    <p>Carrito</p>
-    <div class="cart-quantity">{{ cartQuantity }}</div>
     <div v-if="show" id="cart" class="cart-data">
       <p v-if="cart.length === 0" class="cart-data__text">El carrito esta vacio</p>
       <div v-else>
@@ -85,7 +87,7 @@ const show = ref(false);
 </template>
 
 <style lang="scss" scoped>
-@import '../utilities.scss';
+@import "../utilities.scss";
 .cart {
   display: flex;
   align-items: center;
