@@ -201,8 +201,9 @@ const show = ref(false);
   margin-right: unset;
   border-radius: 0 0 1rem 1rem;
   @include breakpoint(900px) {
-    min-width: 23rem;
-    right: -4rem;
+    width: 24rem;
+    right: 0.2rem;
+    min-width: 20rem;
   }
 }
 
