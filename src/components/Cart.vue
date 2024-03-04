@@ -203,7 +203,7 @@ const show = ref(false);
   @include breakpoint(900px) {
     width: 24rem;
     min-width: 20rem;
-    max-height: 90lvh;
+    max-height: 75lvh;
     right: 0.2rem;
     overflow-y: scroll;
     overflow-x: hidden;
