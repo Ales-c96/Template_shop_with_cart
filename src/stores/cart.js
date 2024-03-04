@@ -46,11 +46,14 @@ export const useCart = defineStore("cart", () => {
   };
 
   const deleteProductFromCart = (id) => {
-    cart.value = cart.value.filter((product) => product.id !== id);
+    const index = cart.value.findIndex((product) => product.id === id);
+    if (index !== -1) {
+      cart.value.splice(index, 1);
+    }
   };
 
   const emptyCart = () => {
-    cart.value = [];
+    cart.value.splice(0, cart.value.length);
   };
 
   return {

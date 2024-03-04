@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { ref, computed } from "vue";
 import { useCart } from "../stores/cart";
 
 const { decreaseQuantity, increaseQuantity, deleteProductFromCart, emptyCart, cart } = useCart();
@@ -37,7 +37,7 @@ const show = ref(false);
         <table class="cart-data__table">
           <thead>
             <tr>
-              <th>Imagen</th>
+              <th></th>
               <th>Nombre</th>
               <th>Precio</th>
               <th>Cantidad:</th>
@@ -45,7 +45,7 @@ const show = ref(false);
             </tr>
           </thead>
           <tbody>
-            <tr v-for="cartItem in cart" :key="cartItem">
+            <tr v-for="cartItem in cart" :key="cartItem.id">
               <td>
                 <img
                   loading="lazy"

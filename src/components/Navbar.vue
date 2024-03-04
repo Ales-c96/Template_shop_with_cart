@@ -134,7 +134,7 @@ onMounted(() => {
     background-color: var(--primary-bg);
 
     &-link {
-      font-size: 4rem;
+      font-size: 3.5rem;
       color: var(--primary);
     }
   }
