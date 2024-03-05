@@ -46,7 +46,7 @@ import Form from "./Form.vue";
   &__form {
     padding: 0 20rem;
     @include breakpoint(900px) {
-      padding: 0 5rem;
+      padding: 0 2rem;
     }
   }
 }

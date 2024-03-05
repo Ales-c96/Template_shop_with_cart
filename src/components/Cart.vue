@@ -101,6 +101,12 @@ const show = ref(false);
   color: #fff;
   cursor: pointer;
 
+  @include breakpoint(900px) {
+    & p {
+      display: none;
+    }
+  }
+
   &-img {
     position: relative;
     width: 1.2rem;
